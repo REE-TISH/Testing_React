@@ -8,17 +8,32 @@ function App() {
   const [data,setData] = useState(null)
   const [isLoading,setIsLoading] = useState(true)
 
+  // useEffect(()=>{
+
+  //   axios.get('	https://api.github.com/users/REE-TISH')
+  //   .then((data)=>{
+  //     console.log(data.data)
+  //     setData(data.data)
+  //     setIsLoading(false)
+  //   })
+    
+    
+
+  // },[isLoading])
+
   useEffect(()=>{
 
-    axios.get('	https://api.github.com/users/REE-TISH')
+    axios.get('https://backend-6d0x.onrender.com/')
     .then((data)=>{
       console.log(data.data)
       setData(data.data)
       setIsLoading(false)
     })
     
+    
 
   },[isLoading])
+
 
   if(isLoading){
     return (<>
@@ -34,9 +49,10 @@ function App() {
     <>
      <div className='min-h-screen bg-slate-800 flex flex-col gap-5 justify-center items-center text-white text-center' >
 
-      <img src={data.avatar_url} className='rounded-xl h-80' />
-      <h1 className='text-xl'>{data.login}</h1>
-
+      {/* <img src={data.avatar_url} className='rounded-xl h-80' />
+      <h1 className='text-xl'>{data.login}</h1> */}
+    <h1>{data.User}</h1>
+    <p>{data.body}</p>
      </div>
     </>
   )
