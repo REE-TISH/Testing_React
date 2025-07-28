@@ -2,25 +2,14 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import axios from 'axios'
-import {ScaleLoader} from 'react-spinners'
+
 
 function App() {
 
   const [data,setData] = useState(null)
   const [isLoading,setIsLoading] = useState(true)
 
-  // useEffect(()=>{
 
-  //   axios.get('	https://api.github.com/users/REE-TISH')
-  //   .then((data)=>{
-  //     console.log(data.data)
-  //     setData(data.data)
-  //     setIsLoading(false)
-  //   })
-    
-    
-
-  // },[isLoading])
 
   useEffect(()=>{
 
@@ -39,15 +28,7 @@ function App() {
   if(isLoading){
     return (<>
      <div className='min-h-screen bg-slate-800 flex justify-center items-center text-white ' >
-
-      
-      <div className=''>
-        <ScaleLoader
-        color='white'
-        barCount={5}
-        width={5}
-        />
-      </div>
+        <h1 className='text-2xl'>Loading...</h1>
      </div>
     </>)
   }
