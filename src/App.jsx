@@ -57,16 +57,7 @@ function App() {
      <div className='min-h-screen bg-slate-800 flex justify-center items-center text-white ' >
         <h1 className='text-2xl'>Loading...</h1>
 
-      
-      <div className=''>
-        <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
-          setWord(e.target.value)
-        }}  onKeyDown={(e)=>{
-          Check_key(e)
-        }}/>
 
-        
-      </div>
      </div>
     </>)
   }
@@ -79,6 +70,12 @@ function App() {
       
     <h1>{data.User}</h1>
     <p>{data.body}</p>
+     <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
+          setWord(e.target.value)
+        }}  onKeyDown={(e)=>{
+          Check_key(e)
+        }}/>
+
      </div>
     </>
   )
