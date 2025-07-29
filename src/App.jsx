@@ -39,7 +39,7 @@ function App() {
   },[isLoading])
 
   const Check_key = (e)=>{
-    console.log(e)
+
     const data = {
       message:word
     }
