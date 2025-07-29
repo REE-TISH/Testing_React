@@ -36,7 +36,7 @@ function App() {
     
     
 
-  },[isLoading])
+  },[])
 
   const Check_key = (e)=>{
 
@@ -72,7 +72,9 @@ function App() {
     <p>{data.body}</p>
      <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
           setWord(e.target.value)
-        }}  onKeyDown={(e)=>{
+        }}  
+       value={word}
+       onKeyDown={(e)=>{
           Check_key(e)
         }}/>
 
