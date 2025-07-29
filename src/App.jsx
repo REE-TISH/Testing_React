@@ -12,18 +12,7 @@ function App() {
   const [word,setWord] = useState('')
 
 
-  // useEffect(()=>{
 
-  //   axios.get('	https://api.github.com/users/REE-TISH')
-  //   .then((data)=>{
-  //     console.log(data.data)
-  //     setData(data.data)
-  //     setIsLoading(false)
-  //   })
-    
-    
-
-  // },[isLoading])
 
   useEffect(()=>{
     RefSocket.current = new WebSocket("ws://localhost:8000/ws/chat/group1/");
