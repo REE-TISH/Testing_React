@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import axios from 'axios'
-import {ScaleLoader} from 'react-spinners'
+
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
   const [isLoading,setIsLoading] = useState(true)
   const RefSocket = useRef(null)
   const [word,setWord] = useState('')
+
 
   // useEffect(()=>{
 
@@ -65,6 +66,7 @@ function App() {
   if(isLoading){
     return (<>
      <div className='min-h-screen bg-slate-800 flex justify-center items-center text-white ' >
+        <h1 className='text-2xl'>Loading...</h1>
 
       
       <div className=''>
