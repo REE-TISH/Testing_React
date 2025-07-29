@@ -15,7 +15,7 @@ function App() {
 
 
   useEffect(()=>{
-    RefSocket.current = new WebSocket("ws://localhost:8000/ws/chat/group1/");
+    RefSocket.current = new WebSocket("wss://newbackend-cj5e.onrender.com/ws/chat/group1/");
 
 
     RefSocket.current.onmessage = function(e){
@@ -59,13 +59,13 @@ function App() {
 
       
       <div className=''>
-        {/* <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
+        <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
           setWord(e.target.value)
         }}  onKeyDown={(e)=>{
           Check_key(e)
-        }}/> */}
+        }}/>
 
-        <h1 className='text-2xl'>Loading...</h1>
+        
       </div>
      </div>
     </>)
