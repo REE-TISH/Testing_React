@@ -78,7 +78,7 @@ function App() {
        onKeyDown={(e)=>{
           Check_key(e)
         }}/>
-        <div className='flex flex-col items-center justify-center overflow-y-scroll'>
+        <div className='flex flex-col items-center justify-center'>
             {message.length > 0 ? (
                 message.map((data, index) => (
                   <p key={index}>User : {data?.message || ''}</p>
