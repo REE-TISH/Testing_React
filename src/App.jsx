@@ -79,7 +79,7 @@ function App() {
           Check_key(e)
         }}/>
       <div className='flex flex-col items-center justify-center'>
-          {message?(message.map((data)=>{
+          {message != []?(message.map((data)=>{
       
             <p>{data.message}</p>
           })):(<p>no messages</p>)}
