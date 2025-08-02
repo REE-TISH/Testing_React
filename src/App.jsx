@@ -81,7 +81,7 @@ function App() {
       <div className='flex flex-col items-center justify-center'>
           {message?(message.map((data,index)=>{
             
-            <p key={index}>{data?data.message || ''}</p>
+            <p key={index}>{data?data.message:''}</p>
           })):(<p>no messages</p>)}
         </div>
      </div>
