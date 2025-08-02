@@ -78,7 +78,7 @@ function App() {
           Check_key(e)
         }}/>
       <div>
-        {message?(<p>{message.message}</p>)}:(<p>no messages</p>)
+        {message?(<p>{message.message}</p>):(<p>no messages</p>)}
       </div>
      </div>
     </>
