@@ -20,7 +20,7 @@ function App() {
 
     RefSocket.current.onmessage = function(e){
       const data =  JSON.parse(e.data)
-      console.log(data)
+      
       setMessage((prev)=>[...prev,data])
     }
 
