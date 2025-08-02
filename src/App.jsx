@@ -15,7 +15,7 @@ function App() {
 
 
   useEffect(()=>{
-    RefSocket.current = new WebSocket("wss://newbackend-cj5e.onrender.com/ws/chat/group1/");
+    RefSocket.current = new WebSocket("wss://websocketbackend-tel9.onrender.com/ws/chat/group1/");
 
 
     RefSocket.current.onmessage = function(e){
