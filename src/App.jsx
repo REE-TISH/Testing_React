@@ -77,9 +77,11 @@ function App() {
        onKeyDown={(e)=>{
           Check_key(e)
         }}/>
-      <div>
-        {message?(<p>{message.message}</p>):(<p>no messages</p>)}
-      </div>
+      <div className='flex flex-col items-center justify-center'>
+          {message?(message.map((data)=>{
+            <p>{data}</p>
+          })):(<p>no messages</p>)}
+        </div>
      </div>
     </>
   )
