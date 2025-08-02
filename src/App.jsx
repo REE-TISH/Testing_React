@@ -10,8 +10,8 @@ function App() {
   const [isLoading,setIsLoading] = useState(true)
   const RefSocket = useRef(null)
   const [word,setWord] = useState('')
-
-  const [message,setMessage] = useState({})
+ 
+  const [message,setMessage] = useState(null)
 
 
   useEffect(()=>{
@@ -20,7 +20,7 @@ function App() {
 
     RefSocket.current.onmessage = function(e){
       const data =  JSON.parse(e.data)
-      setMessage(data)
+      setMessage([prev]=>[...prev,data])
     }
 
   },[])
