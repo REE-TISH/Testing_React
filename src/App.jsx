@@ -27,7 +27,7 @@ function App() {
 
   useEffect(()=>{
 
-    axios.get('https://backend-6d0x.onrender.com')
+    axios.get('https://backend-ch1a.onrender.com/')
     .then((data)=>{
       console.log(data.data)
       setData(data.data)
