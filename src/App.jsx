@@ -11,7 +11,7 @@ function App() {
   const RefSocket = useRef(null)
   const [word,setWord] = useState('')
 
-  const [message,setMessage] = useState(null)
+  const [message,setMessage] = useState([])
 
 
   useEffect(()=>{
