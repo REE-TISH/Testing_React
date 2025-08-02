@@ -11,7 +11,7 @@ function App() {
   const RefSocket = useRef(null)
   const [word,setWord] = useState('')
 
-
+  const [message,setMessage] = useState(null)
 
 
   useEffect(()=>{
@@ -20,7 +20,7 @@ function App() {
 
     RefSocket.current.onmessage = function(e){
       const data =  JSON.parse(e.data)
-      console.log(data)
+      setMessage(data)
     }
 
   },[])
@@ -77,7 +77,15 @@ function App() {
        onKeyDown={(e)=>{
           Check_key(e)
         }}/>
-
+      <div>
+        {if(message){
+          return (
+        <p>
+       {message.message}
+        </p>
+          )
+        }}
+      </div>
      </div>
     </>
   )
