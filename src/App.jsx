@@ -78,11 +78,14 @@ function App() {
        onKeyDown={(e)=>{
           Check_key(e)
         }}/>
-      <div className='flex flex-col items-center justify-center'>
-          {message?(message.map((data,index)=>{
-            
-            <p key={index}>{data?data.message:''}</p>
-          })):(<p>no messages</p>)}
+        <div className='flex flex-col items-center justify-center'>
+            {message.length > 0 ? (
+                message.map((data, index) => (
+                  <p key={index}>{data?.message || ''}</p>
+                ))
+                  ) : (
+          <p>no messages</p>
+          )}
         </div>
      </div>
     </>
