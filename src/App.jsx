@@ -8,7 +8,7 @@ function App() {
 
   const [data,setData] = useState(null)
   const [isLoading,setIsLoading] = useState(true)
-  const [isWebLoading,setIsWebLoading]= useState(true)
+
   const RefSocket = useRef(null)
   const [word,setWord] = useState('')
  
@@ -20,7 +20,7 @@ function App() {
 
     RefSocket.current.onopen = (event)=>{
     console.log('Websocket connected')
-    setIsWebLoading(true)
+    
     }
 
     RefSocket.current.onmessage = function(e){
@@ -30,7 +30,7 @@ function App() {
 
       RefSocket.onclose = (event)=>{
       console.log('websocket connection closed')
-      setIsWebLoading(false)
+    
       }
     }
 
@@ -63,7 +63,7 @@ function App() {
   }
 
 
-  if(isLoading || isWebLoading){
+  if(isLoading){
     return (<>
      <div className='min-h-screen bg-slate-800 flex justify-center items-center text-white ' >
         <h1 className='text-2xl'>Loading...</h1>
