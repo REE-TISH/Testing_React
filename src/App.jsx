@@ -103,6 +103,7 @@ function App() {
           setWord(e.target.value)
         }}  
        value={word}
+        placeholder = 'message...'
        onKeyDown={(e)=>{
           Check_key(e)
         }}/>
