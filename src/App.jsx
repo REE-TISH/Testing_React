@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import axios from 'axios'
-import { SignedIn ,SignedOut,SignInButton } from '@clerk/clerk-react'
+import { SignedIn ,SignedOut,SignInButton ,UserButton} from '@clerk/clerk-react'
 
 function App() {
 
