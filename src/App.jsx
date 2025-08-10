@@ -94,7 +94,7 @@ function App() {
     </div>
 
     <div className='flex flex-col gap-5 items-center justify-center'>
-        <img src={data.avatar} className='rounded-xl h-80' />
+        <img src={data.avatar} className='rounded-xl h-40 md:h-80 ' />
       
         <h1>{data.User}</h1>
         <p>{data.body}</p>
