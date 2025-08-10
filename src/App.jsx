@@ -81,6 +81,8 @@ function App() {
       <SignedIn>
      <div className='min-h-screen bg-slate-800 flex flex-col gap-5 justify-center items-center text-white text-center' >
 
+      <UserButton />
+
     <div className='flex flex-col gap-5 items-center justify-center'>
         <img src={data.avatar} className='rounded-xl h-80' />
       
