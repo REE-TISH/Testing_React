@@ -99,15 +99,7 @@ function App() {
       
         <h1>{data.User}</h1>
         <p>{data.body}</p>
-          <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
-          setWord(e.target.value)
-        }}  
-       value={word}
-        placeholder = 'message...'
-       onKeyDown={(e)=>{
-          Check_key(e)
-        }}/>
-            <div className='flex flex-col items-center justify-center'>
+         <div className='flex flex-col items-center justify-center'>
             {message.length > 0 ? (
                 message.map((data, index) => (
                   <div key={index} className='flex justify-center items-center'><img src={data.avatar} alt={data.User} className='h-5 w-5 object-cover rounded-xl' /> {data.User.split(' ')[0]} : {data?.message || ''}</div>
@@ -116,6 +108,15 @@ function App() {
             <p>no messages</p>
           )}
         </div>
+          <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
+          setWord(e.target.value)
+        }}  
+       value={word}
+        placeholder = 'message...'
+       onKeyDown={(e)=>{
+          Check_key(e)
+        }}/>
+           
     </div>
      </div>
      </SignedIn>
