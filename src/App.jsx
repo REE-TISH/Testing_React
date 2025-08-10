@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import axios from 'axios'
-import { SignedIn ,SignedOut,SignInButton ,UserButton} from '@clerk/clerk-react'
+import { SignedIn ,SignedOut,SignInButton ,UserButton,SignIn,useUser} from '@clerk/clerk-react'
+
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
   const [word,setWord] = useState('')
  
   const [message,setMessage] = useState([])
-
+  const { isLoaded, isSignedIn, user } = useUser();
+  const username = user?.fullName || 'Guest';
 
   useEffect(()=>{
     RefSocket.current = new WebSocket("wss://websocketbackend-tel9.onrender.com/ws/chat/chat_1/");
@@ -52,6 +54,8 @@ function App() {
   const Check_key = (e)=>{
 
     const data = {
+      User: username,
+      avatar: user?.imageUrl || reactLogo,
       message:word
     }
     if(e.key == 'Enter' && e.target.value != ''){
@@ -76,12 +80,18 @@ function App() {
   return (
     <>
     <SignedOut>
-        <SignInButton />
-      </SignedOut>
+    <div className='min-h-screen bg-slate-800 flex justify-center items-center text-white text-center' >
+      
+        <SignIn  />
+      
+    </div>
+    </SignedOut>
       <SignedIn>
-     <div className='min-h-screen bg-slate-800 flex flex-col gap-5 justify-center items-center text-white text-center' >
+     <div className='min-h-screen bg-slate-800 flex flex-col pb-10 justify-between items-center text-white text-center' >
 
-      <UserButton />
+    <div className='flex justify-end w-full p-5'>
+        <UserButton />
+    </div>
 
     <div className='flex flex-col gap-5 items-center justify-center'>
         <img src={data.avatar} className='rounded-xl h-80' />
@@ -98,7 +108,7 @@ function App() {
             <div className='flex flex-col items-center justify-center'>
             {message.length > 0 ? (
                 message.map((data, index) => (
-                  <p key={index}>User : {data?.message || ''}</p>
+                  <div key={index} className='flex justify-center items-center'><img src={data.avatar} alt={data.User} className='h-5 rounded-xl' /> {data.User.split(' ')[0]} : {data?.message || ''}</div>
                 ))
                   ) : (
             <p>no messages</p>
