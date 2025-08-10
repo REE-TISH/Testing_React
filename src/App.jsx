@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import axios from 'axios'
-
+import { SignedIn } from '@clerk/clerk-react'
 
 function App() {
 
@@ -75,29 +75,36 @@ function App() {
 
   return (
     <>
+    <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
      <div className='min-h-screen bg-slate-800 flex flex-col gap-5 justify-center items-center text-white text-center' >
 
-      <img src={data.avatar} className='rounded-xl h-80' />
+    <div className='flex flex-col gap-5 items-center justify-center'>
+        <img src={data.avatar} className='rounded-xl h-80' />
       
-    <h1>{data.User}</h1>
-    <p>{data.body}</p>
-     <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
+        <h1>{data.User}</h1>
+        <p>{data.body}</p>
+          <input type="text" className='bg-transparent p-1 border border-slate-600 rounded-md focus:outline-none' onChange={(e)=>{
           setWord(e.target.value)
         }}  
        value={word}
        onKeyDown={(e)=>{
           Check_key(e)
         }}/>
-        <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center justify-center'>
             {message.length > 0 ? (
                 message.map((data, index) => (
                   <p key={index}>User : {data?.message || ''}</p>
                 ))
                   ) : (
-          <p>no messages</p>
+            <p>no messages</p>
           )}
         </div>
+    </div>
      </div>
+     </SignedIn>
     </>
   )
 }
