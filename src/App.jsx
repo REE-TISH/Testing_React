@@ -87,13 +87,14 @@ function App() {
     </div>
     </SignedOut>
       <SignedIn>
-     <div className='min-h-screen bg-slate-800 flex flex-col pb-10 justify-between items-center text-white text-center' >
+     <div className='min-h-screen bg-slate-800 flex flex-col pb-10 justify-center md:justify-between items-center text-white text-center' >
 
+    
     <div className='flex justify-end w-full p-5'>
         <UserButton />
     </div>
 
-    <div className='flex flex-col gap-5 items-center justify-center'>
+    <div className='flex flex-col gap-5 items-center justify-center pb-40 md:pb-0'>
         <img src={data.avatar} className='rounded-xl h-40 md:h-80 ' />
       
         <h1>{data.User}</h1>
