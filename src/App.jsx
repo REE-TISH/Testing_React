@@ -109,7 +109,7 @@ function App() {
             <div className='flex flex-col items-center justify-center'>
             {message.length > 0 ? (
                 message.map((data, index) => (
-                  <div key={index} className='flex justify-center items-center'><img src={data.avatar} alt={data.User} className='h-5 w-5 object-fit rounded-xl' /> {data.User.split(' ')[0]} : {data?.message || ''}</div>
+                  <div key={index} className='flex justify-center items-center'><img src={data.avatar} alt={data.User} className='h-5 w-5 object-cover rounded-xl' /> {data.User.split(' ')[0]} : {data?.message || ''}</div>
                 ))
                   ) : (
             <p>no messages</p>
